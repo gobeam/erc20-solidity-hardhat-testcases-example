@@ -11,7 +11,7 @@ npm i
 ## Compile
 Run following command
 ```bash
-npx hardhat compile
+npm run compile
 ```
 
 ## List all accounts
@@ -21,12 +21,17 @@ npx hardhat accounts
 
 ## hardhat cleanup
 ```bash
-npx run clean
+npm run clean
 ```
 
 ## Run test
 ```bash
-npx run test
+npm run test
+```
+
+## Run Coverage
+```bash
+npx hardhat coverage
 ```
 
 ##  Deploy in rinkeby testnet
