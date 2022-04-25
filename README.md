@@ -35,7 +35,7 @@ npx hardhat coverage
 ```
 
 ##  Deploy in rinkeby testnet
-Update RINKEBY_URL & PRIVATE_KEY in .env before running this command. You can get these values by creating project from [Alchemy](https://www.alchemy.com/).
+Update RINKEBY_URL & PRIVATE_KEY in .env before running this command. You can get RINKEBY_URL value by creating project from [Alchemy](https://www.alchemy.com/) and PRIVATE_KEY should have private key of wallet that holds some eth value of corresponding Ethereum network you're going to deploy smart contract on.
 ```bash
 npm run deploy:rinkeby
 ``` 
