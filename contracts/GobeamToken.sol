@@ -22,7 +22,7 @@ contract GobeamToken is ERC20Interface, Ownable, Treasurer, SafeMath {
         _symbol = "GOBEAM";
         _name = "GobeamToken";
         _decimals = 18;
-        _totalSupply = 1000000000000000000000000*10**_decimals;
+        _totalSupply = 1000000000*10**_decimals;
         _treasurerFee = 25;
         _balances[msg.sender] = _totalSupply;
         emit Transfer(address(0), msg.sender, _totalSupply);

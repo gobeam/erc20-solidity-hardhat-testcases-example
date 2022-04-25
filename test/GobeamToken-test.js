@@ -19,6 +19,25 @@ describe("Gobeam Token", function () {
     expect(await hardhatToken.totalSupply()).to.equal(ownerBalance);
   });
 
+  it("Check if token name is GobeamToken", async () => {
+    expect(await hardhatToken.name()).to.equal("GobeamToken");
+  });
+
+  it("Check if symbol is GOBEAM", async () => {
+    expect(await hardhatToken.symbol()).to.equal("GOBEAM");
+  });
+
+  it("Check decimals is 18", async () => {
+    expect(await hardhatToken.decimals()).to.equal(18);
+  });
+
+  it("Check if total supply is 1000000000 * 10 ^ 18", async () => {
+    const amount = "1000000000000000000000000000";
+    expect(await hardhatToken.totalSupply()).to.equal(
+      ethers.BigNumber.from(amount)
+    );
+  });
+
   it("Check if treasurer is set to token owner", async () => {
     expect(await hardhatToken.treasurer()).to.equal(owner.address);
   });
