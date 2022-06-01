@@ -1,0 +1,3 @@
+{
+  "{contracts}/**/*.sol": ["npm run lint:sol"]
+}

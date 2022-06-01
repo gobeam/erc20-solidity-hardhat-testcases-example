@@ -1,0 +1,35 @@
+name: test
+
+on: push
+
+jobs:   
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.3.0
+
+      - name: Set Environment Variables
+        uses: ./.github/actions/setvars
+        with:
+          varFilePath: ./.github/variables/myvars.env
+
+      - name: Install Ganache
+        run: npm install ganache --global
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Compile
+        run: npm run compile
+
+      - name: Run unit test
+        run: npm run test:local
